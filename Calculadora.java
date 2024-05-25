@@ -1,3 +1,8 @@
+/**
+ * @author Patricia
+ *
+ */
+
 import java.awt.BorderLayout;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -9,7 +14,11 @@ import org.eclipse.swt.widgets.Text;
 import javax.swing.JOptionPane;
 //import org.w3c.dom.Text;
 
+/**Clase Calculadora*/
+
 public class Calculadora {
+
+    /**Atributos*/
 
     // Constantes
     final int MAX_DIGITS = 5;
@@ -26,6 +35,10 @@ public class Calculadora {
 
     private static Text texto_resultado;
 
+    /**Métodos
+     *
+     * @param gui parámetro del método Calculadora
+     */
     public Calculadora(boolean gui) {
 
         //Inicialización de las variables.
@@ -241,6 +254,10 @@ public class Calculadora {
         return texto_resultado.getText();
     }
 
+    /**
+     *
+     * @param s parámetro del método setResultadoString
+     */
     public void setResultadoString(String s){
         texto_resultado.setText(s);
     }
@@ -250,6 +267,10 @@ public class Calculadora {
         return Integer.parseInt(resultado);
     }
 
+    /**
+     *
+     * @param digito parámetro del método anadeNuevoDigito
+     */
     public void anadeNuevoDigito(int digito){
         if (inicializa_resultado)
             setResultadoString("");
@@ -267,6 +288,11 @@ public class Calculadora {
         modo = MODE_ENTRADA;
         inicializa_resultado = false;
     }
+
+    /**
+     *
+     * @param new_operacion parámetro del método ejecutarOperacion
+     */
 
     public void ejecutarOperador(String new_operacion) {
 
@@ -300,6 +326,10 @@ public class Calculadora {
         operacion = "null";
     }
 
+    /**
+     *
+     * @return devuelve resultado
+     */
     public int ejecutarOperacion() {
         int resultado = 0;
 
@@ -330,6 +360,10 @@ public class Calculadora {
         return resultado;
     }
 
+    /**
+     *
+     * @param resultado parámetro del método muestraResultado
+     */
     public void muestraResultado(int resultado){
         setResultadoString(Integer.toString(resultado));
         valor1 = resultado;
@@ -337,6 +371,10 @@ public class Calculadora {
         inicializa_resultado = true;
     }
 
+    /**
+     *
+     * @param args parámetro del método main
+     */
     public static void main(String args[]) {
         Calculadora calculadora = new Calculadora(true);
     }
